@@ -1,19 +1,28 @@
-import {Component} from React;
-
-export default class ToggleSwitch extends Component {
-    constructor(props) {
-      super(props);
+class ToggleSwitch extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      switchOn: false
     }
-      
-    render() {
-      return (      
-        <div className="onoffswitch">
-          <input type="checkbox" id="onoffswitch" className="onoffswitch-checkbox" />
-          <label className="onoffswitch-label" htmlFor="onoffswitch">
-            <span className="onoffswitch-inner"></span>
-            <span className="onoffswitch-switch"></span>
-          </label>
-        </div>
-      );
-    }
+    
+    this._handleButtonToggle = this._handleButtonToggle.bind(this);
+  }
+  
+  _handleButtonToggle(e) {
+    this.setState({
+      switchOn: !this.state.switchOn
+    })
+  }
+    
+  render() {
+    return (      
+      <div className="toggleswitch">
+        <input type="checkbox" id="onoffswitch" className="toggleswitch-checkbox" onChange={this._handleButtonToggle} />
+        <label className="toggleswitch-label" htmlFor="onoffswitch">
+          <span className="toggleswitch-inner"></span>
+          <span className="toggleswitch-switch"></span>
+        </label>
+      </div>
+    );
+  }
 }
