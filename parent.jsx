@@ -9,6 +9,7 @@ class Parent extends React.Component {
         switchOn: false
       }
       
+      this.defaultFormSwitchChecked = true;
       this.onSwitchToggle = this.onSwitchToggle.bind(this);
     }
     // This is an onChange handler which will get pass to the onSwitchToggle props of FormSwitch component
@@ -22,7 +23,7 @@ class Parent extends React.Component {
     render() {
       return (
         // Passing event handler to FormSwitch component
-        <FormSwitch onSwitchToggle={this.onSwitchToggle} />
+        <FormSwitch defaultChecked={this.defaultFormSwitchChecked} onSwitchToggle={this.onSwitchToggle} />
       );
     }
   }
