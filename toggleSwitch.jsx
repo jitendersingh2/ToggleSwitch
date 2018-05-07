@@ -1,28 +1,15 @@
-class ToggleSwitch extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      switchOn: false
-    }
-    
-    this._handleButtonToggle = this._handleButtonToggle.bind(this);
-  }
-  
-  _handleButtonToggle(e) {
-    this.setState({
-      switchOn: !this.state.switchOn
-    })
-  }
-    
-  render() {
+import React from 'react';
+
+const FormSwitch = (props) => {
     return (      
-      <div className="toggleswitch">
-        <input type="checkbox" id="onoffswitch" className="toggleswitch-checkbox" onChange={this._handleButtonToggle} />
-        <label className="toggleswitch-label" htmlFor="onoffswitch">
-          <span className="toggleswitch-inner"></span>
-          <span className="toggleswitch-switch"></span>
+      <div className="onoffswitch" tabIndex="0">
+        <input type="checkbox" id="onoffswitch" className="onoffswitch-checkbox" onChange={props.onSwitchToggle} />
+        <label className="onoffswitch-label" htmlFor="onoffswitch">
+          <span className="onoffswitch-inner"></span>
+          <span className="onoffswitch-switch"></span>
         </label>
       </div>
     );
-  }
 }
+
+export default FormSwitch;
