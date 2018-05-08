@@ -1,7 +1,7 @@
 import React from 'react';
 
 const FormSwitch = (props) => {
-    const btnClassNames = `onoffswitch-inner ${props.classNames.join(' ')}`;
+    const btnClassNames = `onoffswitch-inner ${props.classNames ? props.classNames.join(' ') : ''}`;
     return (      
       <div className="onoffswitch" tabIndex="0">
         <input type="checkbox" id="onoffswitch" className="onoffswitch-checkbox" defaultChecked={props.defaultChecked} onChange={props.onSwitchToggle} />
