@@ -23,7 +23,10 @@ class Parent extends React.Component {
     render() {
       return (
         // Passing event handler to FormSwitch component
-        <FormSwitch defaultChecked={this.defaultFormSwitchChecked} onSwitchToggle={this.onSwitchToggle} />
+        // Add className to override the button default color: 
+        // for ON button use className:before and for OFF use className:after selector 
+        // and also add specificity !important to background color value 
+        <FormSwitch classNames={['btn-color']} defaultChecked={this.defaultFormSwitchChecked} onSwitchToggle={this.onSwitchToggle} />
       );
     }
   }
